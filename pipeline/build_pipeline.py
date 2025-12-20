@@ -20,9 +20,9 @@ def main():
         vector_builder = VectorStoreBuilder(processed_csv)
         vector_builder.build_and_save_vectorstore()
 
-        logger.info("Vector store Built sucesfully....")
+        logger.info("Vector store Built successfully....")
 
-        logger.info("Pipelien built sucesfuly....")
+        logger.info("Pipeline built successfully....")
     except Exception as e:
             logger.error(f"Failed to execute pipeline {str(e)}")
             raise CustomException("Error during pipeline " , e)
