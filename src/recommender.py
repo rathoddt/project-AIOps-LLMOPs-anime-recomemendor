@@ -1,4 +1,12 @@
-from langchain.chains import RetrievalQA
+# Prefer RetrievalQA from langchain if available; fall back to langchain_classic or langchain_community if not
+try:
+    from langchain.chains import RetrievalQA
+except ImportError:
+    try:
+        from langchain_classic.chains import RetrievalQA
+    except ImportError:
+        from langchain_community.chains import RetrievalQA
+
 from langchain_groq import ChatGroq
 from src.prompt_template import get_anime_prompt
 

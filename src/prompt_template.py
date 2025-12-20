@@ -1,4 +1,8 @@
-from langchain.prompts import PromptTemplate
+# Use PromptTemplate from langchain where available, otherwise fallback to langchain_core
+try:
+    from langchain.prompts import PromptTemplate
+except Exception:
+    from langchain_core.prompts import PromptTemplate
 
 def get_anime_prompt():
     template = """
